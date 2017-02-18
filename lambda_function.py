@@ -13,7 +13,6 @@ if 'LAMBDA_TEST' in os.environ:
     logger = logging.getLogger(__name__)
 else:
     logger = logging.getLogger()
-
 logger.setLevel(logging.INFO)
 logger.info('Loading Lambda Function')
 
@@ -22,13 +21,10 @@ ENCRYPTED = os.environ['APIKEY']
 # handler so that these are decrypted once per container
 DECRYPTED = boto3.client('kms').decrypt(CiphertextBlob=b64decode(ENCRYPTED))['Plaintext']
 
-
-
 s3 = boto3.client('s3')
 
-
+# Basic handler blueprint for processing S3 events
 def lambda_handler(event, context):
-    #print("Received event: " + json.dumps(event, indent=2))
 
     # Get the object from the event and show its content type
     bucket = event['Records'][0]['s3']['bucket']['name']

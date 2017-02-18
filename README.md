@@ -1,6 +1,6 @@
 # AWS Lambda Test Harness (Python 2.7)
 
-If you find yourself often creating Lambda Functions (LF) and editing code in-line, it might be easier to run your LF on your local machine. In priniciple, this is easy because, after all, it's just a block of Python code. The idea is to store your LF locally (typically lambda_function.py) and then call it from a test program - https://github.com/pgolding/aws-lambda-test-python/blob/master/test.py
+If you find yourself often creating Lambda Functions (LF) and editing code in-line, it might be easier to run your LF on your local machine. In priniciple, this is easy because, after all, it's just a block of Python code. The idea is to store your LF locally (typically lambda_function.py) and then call it from a test program - test.py
 
 However, there are a few housekeeping issues to settle:
 

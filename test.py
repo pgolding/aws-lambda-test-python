@@ -3,8 +3,6 @@ This file is a template for locally testing Lambda functions in Python 2.7
 It requires the existence of a local file 'lambda-event.json' that contains the simulated 'event' object.
 This is similar to the test data that gets used to test Lambda functions in the AWS environment.
 NOTE: no attempt is made here to simlulate the 'context' object
-
-
 '''
 import json
 import os
