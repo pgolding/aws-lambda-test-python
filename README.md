@@ -1,6 +1,6 @@
 # AWS Lambda Test Harness (Python 2.7)
 
-If you find yourself often creating Lambda Functions (LF) and editing code in-line, it might be easier to run your LF on your local machine. In priniciple, this is easy because, after all, it's just a block of Python code. The idea is to store your LF locally (typically lambda_function.py) and then call it from a test program - test.py
+If you find yourself often creating Lambda Functions (LF) and editing code in-line, it might be easier to run your LF on your local machine. In priniciple, this is easy because, after all, it's just a block of Python code. The idea is to store your LF locally (typically ```lambda_function.py```) and then call it from a test program - ```test.py```
 
 However, there are a few housekeeping issues to settle:
 
@@ -99,7 +99,7 @@ In this case, I have set the role_arn (which you can get from [the IAM console](
 
 ### Event Object
 
-Finally, you need to call your lambda handler by passing in an event object that simulates the object that will get passed to your LF when it runs on AWS. You should add the event object JSON data to the file lambda-event.json and then it's ready to pass into your handler. However, you might be wondering how to get that data.
+Finally, you need to call your lambda handler by passing in an event object that simulates the object that will get passed to your LF when it runs on AWS. You should add the event object JSON data to the file ```lambda-event.json``` and then it's ready to pass into your handler. However, you might be wondering how to get that data.
 
 There are two ways. The best way, and is an implicit assumption in setting up this test, is to first deploy your LF on AWS and connect it to the trigger condition, such as an object creation in S3. Then run the condition and use a basic lamba handler to pass that data out to the logs.
 
@@ -108,10 +108,14 @@ def lambda_handler(event, context):
     print("Received event: " + json.dumps(event, indent=2))
 ```
 
-Then go to the logs for your LF and look for 'Received event:' to find the dump from the event object. Then cut and paste this into the lamda-event.json file. Then you're ready to go.
+Then go to the logs for your LF and look for 'Received event:' to find the dump from the event object. Then cut and paste this into the ```lamda-event.json``` file. Then you're ready to go.
 
 Alternatively, if you haven't yet set up the trigger, then you can use the various test templates already loaded into the AWS LF environment - select "Configure test event" from the Actions menu.
 
 ![screenshot 2017-02-18 15 20 48](https://cloud.githubusercontent.com/assets/28526/23097676/708e1bfa-f5ee-11e6-93ea-9e698b55f1f0.png)
 
-All being well, you should be ready to go and test your LF :+1:
+All being well, you should be ready to go and test your LF
+
+>python test.py
+
+Happy testing :+1:
