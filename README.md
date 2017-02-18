@@ -35,7 +35,7 @@ And then don't forget to install the [Boto3 library](https://boto3.readthedocs.i
 
 ### Environment Variables
 
-You can set environ vars for your LF when running on AWS. A typical, and highly recommended, use case is to store any data that is sensitive, like api keys. These should be encrypted using AWS KMS. You'll then require some code to retreive them, something like:
+You can set environ vars for your LF when running on AWS. A typical (highly recommended) use case is to store any data that is sensitive, like api keys. These should be encrypted using AWS KMS. You'll then require some code to retreive them, something like:
 
 ```python
 ENCRYPTED = os.environ['APIKEY']
