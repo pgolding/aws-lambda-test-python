@@ -1,0 +1,38 @@
+{
+"Records": [
+	{
+		"eventVersion": "2.0", 
+		"eventTime": "2017-02-18T19:32:11.816Z", 
+		"requestParameters": {
+			"sourceIPAddress": "73.241.52.233"
+		}, 
+		"s3": {
+			"configurationId": "MyS3TriggerName", 
+			"object": {
+				"eTag": "a91f66f368w28418e6dd022ba324cb99", 
+				"sequencer": "0058B8A13B94373E90", 
+				"key": "filename.svg", 
+				"size": 31878
+			}, 
+			"bucket": {
+				"arn": "arn:aws:s3:::<bucket name>", 
+				"name": "<bucket name>", 
+				"ownerIdentity": {
+					"principalId": "AD78SQASW7PDX"
+				}
+			}, 
+			"s3SchemaVersion": "1.0"
+		}, 
+		"responseElements": {
+			"x-amz-id-2": "tIdbhGZzg8HARgbtSUzU9PRs90o8g/J1S0XlXqH8R+bZ3910nJ8dxhOi9U6n6Gue", 
+			"x-amz-request-id": "C2944FFF84ECE526"
+		}, 
+		"awsRegion": "us-west-2", 
+		"eventName": "ObjectCreated:Put", 
+		"userIdentity": {
+			"principalId": "AWS:AIDAIOK6QZEQWSGVYA7I6"
+		}, 
+		"eventSource": "aws:s3"
+	}
+]
+}
