@@ -96,6 +96,9 @@ In this case, I have set the role_arn (which you can get from [the IAM console](
 }
 ```
 
+You should check you're using the right IAM settings:
+
+>aws configure
 
 ### Event Object
 
