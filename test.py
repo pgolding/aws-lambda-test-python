@@ -10,10 +10,12 @@ import json
 import os
 import sys
 import logging
-# Set environment var to let Lambda function know we are testing
-# DO THIS FIRST
+# Set LAMBDA_TEST to let Lambda function know we are testing
+# Set any vars before we load the Lambda function
 os.environ['LAMBDA_TEST'] = 'True'   
-
+# Don't forget to set any keys used by Lambda function on AWS (e.g. KMS keys etc.)
+APIKEY = 'AQECAHi+cZAiuTwzWIe727iJYVmf0wb0pvlfHqoDq2w7g2SJIQAAAIcwgYQGCSqGSIb3DQEHBqB3MHUCAQAwcAYJKoZIhvcNAQcBMB4GCWCGSAFlAwQBLjARBAxQl4I3IN+ILjWBsXMCARCAQ3wJ1oQyWgGKr/TgzKZBk4CnagtF8ebxU5l+cKIeBxhwgbvQfoQDM50+Ap2EIueTEUrPRZAKkWD96BkyKKc6/worlH4='
+os.environ['APIKEY'] = APIKEY
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
@@ -26,10 +28,6 @@ LAMBDA_RUNTIME = '2.7'
 if LAMBDA_RUNTIME not in sys.version.split(' ')[0]:
     logger.error('Wrong version of Python')
     exit()
-
-# Don't forget to set any keys used by Lambda function on AWS (e.g. KMS keys etc.)
-APIKEY = 'AQECAHi+cZAiuTwzWIe727iJYVmf0wb0pvlfHqoDq2w7g2SJIQAAAIcwgYQGCSqGSIb3DQEHBqB3MHUCAQAwcAYJKoZIhvcNAQcBMB4GCWCGSAFlAwQBLjARBAxQl4I3IN+ILjWBsXMCARCAQ3wJ1oQyWgGKr/TgzKZBk4CnagtF8ebxU5l+cKIeBxhwgbvQfoQDM50+Ap2EIueTEUrPRZAKkWD96BkyKKc6/worlH4='
-os.environ['APIKEY'] = APIKEY
 
 # Make sure that the trigger event data exists to pass into the handler
 if os.path.exists('lambda-event.json'):

@@ -8,8 +8,7 @@ import logging
 from base64 import b64decode
 
 # This test is for when using the local testing harness
-if os.environ['LAMBDA_TEST'] == 'True':
-    print('LAMBDA_TEST: True')
+if 'LAMBDA_TEST' in os.environ:
     logging.basicConfig(level=logging.INFO)
     logger = logging.getLogger(__name__)
 else:
