@@ -119,6 +119,25 @@ Alternatively, if you haven't yet set up the trigger, then you can use the vario
 
 All being well, you should be ready to go and test your LF
 
->python test.py
+>python test.py test
 
 Happy testing :+1:
+
+### Updating your Lambda Function
+
+Once you are satisfied that your function is working properly, you can update the AWS LF copy by calling the upload function:
+
+>python test.py upload
+
+Note that you should specify your LF name and any dependencies (i.e. packages that you installed locally):
+
+```python
+FUNCTION_NAME = 'napkin-glyph-s3-svg-trigger'
+FUNCTION_LIBS = ['requests']
+```
+
+Don't forget that you must have installed the libs locally to your current folder:
+
+>pip install libname -t .
+
+Have fun :shipit:
