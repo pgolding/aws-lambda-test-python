@@ -4,6 +4,7 @@ from __future__ import print_function
 import unittest
 import awslambda
 import simulate
+import json
 
 # Initialize the event test object to pass into Lambda function
 evt = awslambda.LambdaEvent()
@@ -25,7 +26,7 @@ class TestLambdaMethods(unittest.TestCase):
     # Example test
     def test_event_get(self):
         evt.set_field('httpMethod','GET')
-        res = simulate.test()
+        res = json.loads(simulate.test()['body'])
         # do something that requires GET method
         self.assertTrue(False)
         
