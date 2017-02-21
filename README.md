@@ -119,7 +119,7 @@ Alternatively, if you haven't yet set up the trigger, then you can use the vario
 
 All being well, you should be ready to go and test your LF
 
->python test.py test
+>python simulate.py test
 
 Happy testing :+1:
 
@@ -127,7 +127,7 @@ Happy testing :+1:
 
 Once you are satisfied that your function is working properly, you can update the AWS LF copy by calling the upload function:
 
->python test.py upload
+>python simulate.py upload
 
 Note that you should specify your LF name and any dependencies (i.e. packages that you installed locally):
 
@@ -141,3 +141,9 @@ Don't forget that you must have installed the libs locally to your current folde
 >pip install libname -t .
 
 Have fun :shipit:
+
+### Running with unit tests
+
+Ideally you should write a set of tests in ```tests.py``` and run them till they pass.
+
+>python tests.py
